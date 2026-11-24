@@ -1,0 +1,1609 @@
+# XCLUFY — ULTIMATE ENTERPRISE BUSINESS MANAGEMENT & FINANCIAL ERP PLATFORM
+
+## MASTER PROJECT DEVELOPMENT PROMPT
+
+Build a completely NEW, fully functional, production-ready, enterprise-grade Business Management System for my fashion accessories business, **XCLUFY**.
+
+This is a brand-new project. There is NO existing website, NO existing dashboard, and NO existing application to upgrade.
+
+Start from scratch and build the complete application, including frontend, backend, database, authentication, security, business logic, and all required modules.
+
+This must be a real business management platform, not a UI prototype, static dashboard, or demonstration application.
+
+The system must combine:
+
+- Business Management ERP
+- Financial Management
+- Shareholder & Ownership Management
+- Product & Category Management
+- Inventory Management
+- Point of Sale (POS)
+- Barcode Scanner
+- 80mm Thermal Receipt Printing
+- Customer Relationship Management
+- Pre-order Management
+- Customer Waitlist
+- Supplier Management
+- Expense Management
+- Sales & Revenue Analytics
+- Biometric Authentication
+- Real-time Mobile Push Notifications
+- Admin & Staff Management
+
+The application must be interconnected. Every module must use the same business database and share accurate information.
+
+---
+
+# 1. BUSINESS IDENTITY & BRAND DESIGN
+
+**Business Name:** XCLUFY
+
+**Business Type:** Aesthetic Fashion Items & Accessories.
+
+**Business Model:** Fashion Accessories Retail, Online Sales, Direct POS Sales, Pre-orders, and Inventory-based Sales.
+
+**Country:** Bangladesh.
+
+**Currency:** Bangladeshi Taka (BDT / ৳).
+
+**Default Language:** English.
+
+### Brand Aesthetic
+
+Create a sophisticated, premium, minimalistic fashion-business management platform.
+
+Design direction:
+- Pure black background: #080808.
+- Secondary background: #101010.
+- Card background: #171717.
+- Primary text: #FFFFFF.
+- Secondary text: #A1A1AA.
+- Subtle silver borders.
+- White monochrome accents.
+- Premium modern typography.
+- Clean Lucide icons.
+
+Design inspiration:
+- Apple-inspired UI.
+- Premium fintech dashboards.
+- Luxury fashion brands.
+- Modern enterprise SaaS applications.
+
+### Animation Requirements
+
+Implement:
+- Smooth page transitions.
+- Animated navigation.
+- Elegant modal animations.
+- Animated number counters.
+- Subtle hover effects.
+- Smooth chart animations.
+- Loading skeletons.
+- Premium button interactions.
+- Animated notification indicators.
+- Beautiful biometric authentication animations.
+
+Animations must be smooth and lightweight. Respect reduced-motion accessibility preferences.
+
+Avoid excessive gradients, unnecessary colors, clutter, and generic admin templates.
+
+### Responsive Design
+
+The application must work perfectly on:
+
+- Mobile phones (320px–480px).
+- Large mobile devices.
+- Tablets.
+- Laptops.
+- Desktop computers.
+- Large desktop displays.
+
+Every individual page, form, modal, table, chart, navigation menu, and POS interface must be responsive.
+
+Never simply shrink the desktop interface to fit mobile. Build appropriate mobile layouts.
+
+---
+
+# 2. APPLICATION ARCHITECTURE & NAVIGATION
+
+Create a professional enterprise sidebar.
+
+### Main Navigation
+
+1. Overview Dashboard
+2. Products
+3. Categories
+4. Inventory
+5. New Order / POS
+6. All Orders
+7. Customers
+8. Pre-orders
+9. Customer Waitlist
+10. Shareholders
+11. Suppliers
+12. Income
+13. Expenses
+14. Transactions
+15. Financial Reports
+16. Barcode Management
+17. Import / Export
+18. Notifications
+19. User Management
+20. Activity Logs
+21. Settings
+22. My Profile
+
+Only display modules permitted by the user's role.
+
+The sidebar must be collapsible on desktop and use an elegant navigation drawer on mobile.
+
+Add a global search, notification bell, user profile menu, and quick-action button.
+
+---
+
+# 3. AUTHENTICATION & FIRST ADMIN SYSTEM
+
+Build a secure registration and login system.
+
+### First Registration Rule
+
+The first successfully registered account must automatically become the Main Admin / Super Admin.
+
+This must be implemented through secure server-side database logic.
+
+Never rely on frontend registration order, browser storage, or user-submitted role values.
+
+### Registration Fields
+
+- Full Name.
+- Email Address.
+- Phone Number.
+- Password.
+- Confirm Password.
+- Optional Profile Picture.
+
+### Registration Logic
+
+1. First registered user becomes Main Admin.
+2. Every subsequent user becomes Pending User.
+3. Pending users cannot access private business information.
+4. Main Admin receives new registration notifications.
+5. Main Admin can approve or reject users.
+6. Approved users can access permitted modules.
+7. Rejected users cannot access the application.
+8. Suspended users immediately lose access.
+
+### Authentication Features
+
+- Email and password login.
+- Secure password reset.
+- Email verification.
+- Secure logout.
+- Session management.
+- Optional account recovery.
+- Biometric / Passkey login.
+
+Implement secure role-based access control at the backend and database level.
+
+---
+
+# 4. USER PROFILE & PROFILE PICTURE
+
+Every registered user must have a personal profile.
+
+### Profile Fields
+
+- Full Name.
+- Profile Picture.
+- Email.
+- Phone Number.
+- Account Role.
+- Approval Status.
+- Registration Date.
+- Last Login.
+- Biometric Authentication Status.
+- Notification Preferences.
+
+### Profile Picture Features
+
+- Upload profile picture.
+- Take photo using camera where supported.
+- Crop and reposition image.
+- Preview before saving.
+- Replace existing picture.
+- Remove picture.
+- Display profile picture in the sidebar, user management, activity logs, and shareholder profiles.
+
+Use secure image storage and proper image validation.
+
+---
+
+# 5. ADVANCED BIOMETRIC / FINGERPRINT AUTHENTICATION
+
+This is a very important feature.
+
+Build a modern biometric authentication system using **WebAuthn / FIDO2 Passkeys**.
+
+The goal is to allow approved users to log in using their device's fingerprint or other supported biometric authentication.
+
+### A. Biometric Setup Eligibility
+
+A newly registered user must not be allowed to access biometric enrollment before administrator approval.
+
+Required flow:
+
+1. User registers.
+2. Account receives Pending Approval status.
+3. Main Admin approves the account.
+4. User logs in normally.
+5. User opens My Profile or Security Settings.
+6. User sees the option "Add Your Fingerprint".
+7. User clicks the button.
+8. The browser requests the device's supported biometric authentication.
+9. The device displays its native fingerprint or biometric prompt.
+10. After successful authentication, register the Passkey securely.
+11. Display "Biometric Login Enabled".
+
+### B. Add Your Fingerprint Interface
+
+Create a beautiful dedicated biometric setup interface.
+
+Display:
+- Large animated fingerprint illustration.
+- Premium circular scanning animation.
+- "Add Your Fingerprint" button.
+- Security explanation.
+- Device compatibility status.
+- Enrollment progress.
+- Success and error states.
+
+Suggested animation:
+- Fingerprint lines illuminate gradually.
+- Circular scanning indicator.
+- Smooth success animation.
+- Green or white success indicator.
+- Elegant confirmation message.
+
+Keep animations professional and avoid fake scanning effects that imply the website is reading actual fingerprint data.
+
+### C. Login With Fingerprint
+
+On the login page, provide:
+
+- Email and Password.
+- Continue with Passkey / Fingerprint.
+
+When the user clicks "Fingerprint Login":
+
+1. Initiate WebAuthn authentication.
+2. Ask the device to authenticate using its supported biometric or screen-lock method.
+3. Verify the cryptographic response on the server.
+4. Identify the correct registered account.
+5. Check that the account is approved and active.
+6. Create a secure login session.
+7. Redirect to the dashboard.
+
+### D. Security Requirements
+
+- Never store fingerprint images or fingerprint templates.
+- Store only WebAuthn public-key credentials and required credential metadata.
+- Generate authentication challenges on the server.
+- Verify challenge, origin, RP ID, and signature.
+- Prevent replay attacks.
+- Prevent unauthorized credential registration.
+- Support multiple registered devices per user.
+- Allow users to rename and remove registered Passkeys.
+- Allow Main Admin to revoke access to suspended accounts.
+- Provide password login as a fallback.
+
+### E. Device Compatibility
+
+Support compatible:
+- Android phones with fingerprint authentication.
+- iPhones with Face ID or Touch ID.
+- Windows Hello.
+- macOS Touch ID.
+- Supported desktop security keys and passkeys.
+
+Important: The actual biometric prompt is controlled by the device operating system and browser. Do not promise fingerprint-specific hardware support on devices that only offer another authentication method.
+
+Use HTTPS and a supported WebAuthn implementation.
+
+If the browser does not support WebAuthn, show a clear compatibility message and allow normal login.
+
+Do not use a fake frontend-only fingerprint login.
+
+---
+
+# 6. SHAREHOLDER & BUSINESS OWNERSHIP MANAGEMENT
+
+Build a dedicated and powerful **Shareholder Management System**.
+
+This module is exclusively controlled by the Main Admin.
+
+It must be treated as an important business ownership and investment management module.
+
+## A. Initial Ownership Structure
+
+At the beginning of the application:
+
+- Main Admin owns 100% of XCLUFY.
+- Total business ownership: 100%.
+- Registered shareholders: 0.
+- No additional shareholder accounts should be pre-created.
+- No fake shareholder or investment data should exist.
+
+Main Admin can add shareholders whenever necessary.
+
+The Main Admin must have complete control over shareholder creation, ownership allocation, investment records, and shareholder information.
+
+## B. Add New Shareholder
+
+Inside the Shareholders page, add a prominent button:
+
+**+ ADD SHAREHOLDER**
+
+When clicked, open a professional form.
+
+Fields:
+
+1. Shareholder Full Name.
+2. Profile Picture.
+3. Phone Number.
+4. Email Address.
+5. Address.
+6. Initial Investment Amount (BDT).
+7. Investment Date.
+8. Ownership Allocation.
+9. Shareholder Notes.
+10. Shareholder Status.
+
+Allow the Main Admin to add someone who does not yet have a website account.
+
+Also provide the option to link an existing approved user account to a shareholder record.
+
+For example, if I later want to add a shareholder named Karim, I can create his shareholder profile from the Main Admin panel.
+
+Do not create Karim or any other shareholder automatically.
+
+## C. Automatic Share Percentage Calculation
+
+Implement an accurate ownership calculation system.
+
+Example:
+
+Suppose total business equity investment is ৳100,000.
+
+| Shareholder | Investment |
+|---|---:|
+| Main Admin | ৳60,000 |
+| Shareholder A | ৳25,000 |
+| Shareholder B | ৳15,000 |
+| Total | ৳100,000 |
+
+Calculated ownership:
+
+- Main Admin: 60%.
+- Shareholder A: 25%.
+- Shareholder B: 15%.
+
+Formula:
+
+Ownership Percentage = (Individual Equity Capital / Total Equity Capital) × 100
+
+Show percentages dynamically and accurately.
+
+### Important Ownership Rules
+
+Initially, the Main Admin has 100% ownership.
+
+When adding a shareholder, the Main Admin must select how the ownership will be allocated.
+
+Provide two methods:
+
+**Method 1: Investment-Based Allocation**
+
+Calculate ownership based on the total approved equity contributions.
+
+**Method 2: Manual Ownership Allocation**
+
+The Main Admin explicitly enters the shareholder's ownership percentage and confirms the corresponding ownership transfer or allocation.
+
+The system must ensure that all active ownership percentages total exactly 100%.
+
+Do not silently dilute or change the Main Admin's ownership when an investment record is entered.
+
+A loan, temporary advance, or operational payment must not automatically become equity.
+
+Every ownership change must require explicit Main Admin confirmation.
+
+## D. Shareholder Dashboard
+
+Create a dedicated shareholder overview.
+
+Display:
+
+- Total Business Equity.
+- Total Number of Shareholders.
+- Main Admin Ownership.
+- Individual Ownership Percentages.
+- Total Investment.
+- Individual Investment.
+- Ownership Distribution Chart.
+- Recent Investment Activity.
+
+Use elegant donut charts and percentage indicators.
+
+## E. Individual Shareholder Profile
+
+Every shareholder must have a dedicated profile page.
+
+Display:
+
+- Name.
+- Profile Picture.
+- Contact Information.
+- Total Investment.
+- Ownership Percentage.
+- Investment History.
+- Ownership History.
+- Profit Distribution History.
+- Shareholder Status.
+- Notes.
+
+## F. Investment Management
+
+Allow Main Admin to:
+
+- Add investment.
+- Record additional investment.
+- Record capital withdrawal where permitted.
+- Edit investment records with audit history.
+- View all investments.
+- Export investment reports.
+
+Every investment must include:
+
+- Amount.
+- Date.
+- Investment Type.
+- Payment Method.
+- Reference Number.
+- Description.
+- Proof of Payment attachment.
+
+Never confuse capital contributions with sales revenue or operational income.
+
+## G. Profit Distribution
+
+Add an optional Profit Distribution module.
+
+Main Admin can:
+
+1. Select a financial period.
+2. View distributable profit.
+3. Set a distribution amount.
+4. Preview each shareholder's allocation.
+5. Confirm the distribution.
+6. Save the distribution history.
+
+Example:
+
+Distributable profit: ৳50,000.
+
+If Main Admin owns 60%, the calculated share is ৳30,000.
+
+If Shareholder A owns 25%, the calculated share is ৳12,500.
+
+If Shareholder B owns 15%, the calculated share is ৳7,500.
+
+Use the approved ownership percentages at the selected distribution date.
+
+Do not automatically distribute profits or withdraw business cash. Every distribution requires explicit Main Admin approval.
+
+The system must distinguish accounting profit from actual available cash.
+
+## H. Shareholder Permissions
+
+Shareholder records and business user accounts must remain separate concepts.
+
+A shareholder does not automatically receive dashboard access.
+
+Only the Main Admin can:
+- Add shareholders.
+- Edit shareholder records.
+- Remove or deactivate shareholders.
+- Change ownership percentages.
+- Approve ownership transfers.
+- Record investments.
+- Approve profit distributions.
+
+If a shareholder has a linked approved account, allow the Main Admin to optionally grant read-only shareholder access to their own investment and ownership information.
+
+Do not allow shareholder users to access other shareholders' private information unless explicitly authorized.
+
+## I. Ownership History
+
+Maintain a permanent ownership change history.
+
+Record:
+- Previous percentage.
+- New percentage.
+- Previous equity value.
+- New equity value.
+- Effective date.
+- Reason for change.
+- Authorized administrator.
+- Supporting documents.
+
+Never silently overwrite historical ownership records.
+
+---
+
+# 7. BUSINESS OVERVIEW DASHBOARD
+
+Build a premium, real-time business dashboard.
+
+### Financial Cards
+
+- Total Revenue.
+- Actual Money Received.
+- Total Expenses.
+- Gross Profit.
+- Net Profit.
+- Available Business Balance.
+- Outstanding Customer Payments.
+- Total Orders.
+- Total Customers.
+- Total Products.
+- Inventory Value.
+- Total Business Equity.
+- Total Shareholders.
+
+Only show shareholder and investment metrics to authorized users.
+
+### Analytics
+
+- Daily Sales.
+- Weekly Sales.
+- Monthly Revenue.
+- Yearly Revenue.
+- Expenses vs Income.
+- Profit & Loss.
+- Best-Selling Products.
+- Sales by Category.
+- Order Status Distribution.
+- Inventory Performance.
+
+### Filters
+
+- Today.
+- Yesterday.
+- Last 7 Days.
+- Last 30 Days.
+- This Month.
+- Previous Month.
+- This Year.
+- Custom Date Range.
+
+All information must come from actual database records.
+
+---
+
+# 8. PRODUCT MANAGEMENT
+
+Create a complete product management module.
+
+### Add Product
+
+Fields:
+
+- Product Name.
+- Product SKU.
+- Category.
+- Description.
+- Product Images.
+- Purchase Price.
+- Selling Price.
+- Discount Price.
+- Available Stock.
+- Minimum Stock.
+- Barcode.
+- Product Status.
+- Product Tags.
+
+### Fashion Variants
+
+Support:
+
+- Size.
+- Color.
+- Material.
+- Style.
+- Variant SKU.
+- Variant Barcode.
+- Variant Price.
+- Variant Stock.
+
+Allow multiple variants per product.
+
+### Product Actions
+
+- Add.
+- Edit.
+- Delete.
+- Duplicate.
+- Archive.
+- Search.
+- Filter.
+- Sort.
+- View Details.
+- Update Stock.
+
+---
+
+# 9. CATEGORY MANAGEMENT
+
+Allow the Main Admin or authorized inventory users to create categories.
+
+Examples:
+
+- Sunglasses.
+- Bandanas.
+- Rings.
+- Chains.
+- Necklaces.
+- Bracelets.
+- Fashion Accessories.
+- Other Accessories.
+
+Each category must support:
+
+- Name.
+- Description.
+- Image.
+- Status.
+- Product Count.
+
+Support unlimited custom categories.
+
+---
+
+# 10. CSV PRODUCT IMPORT CENTER
+
+I will provide an actual CSV file containing my existing products.
+
+Build an intelligent CSV import system.
+
+### Workflow
+
+1. Upload CSV.
+2. Read CSV headers.
+3. Analyze column structure.
+4. Automatically identify product fields.
+5. Provide manual column mapping.
+6. Preview all products.
+7. Validate product information.
+8. Detect duplicate SKU and barcode.
+9. Detect missing information.
+10. Import valid products.
+11. Generate an import report.
+
+Support:
+
+- UTF-8.
+- Bangla and English.
+- Quoted fields.
+- Large CSV files.
+- Leading zeros in barcodes.
+- Duplicate detection.
+- Update or skip existing products.
+- Downloadable error reports.
+
+Do not invent products.
+
+Do not silently overwrite existing records.
+
+Wait for my actual CSV file.
+
+---
+
+# 11. INVENTORY MANAGEMENT
+
+Implement:
+
+- Available Stock.
+- Reserved Stock.
+- Sold Stock.
+- Damaged Stock.
+- Returned Stock.
+- Low Stock.
+- Out of Stock.
+
+Track all stock adjustments.
+
+Automatically update inventory when orders are completed.
+
+Support:
+- Stock receiving.
+- Stock adjustment.
+- Damaged items.
+- Returns.
+- Reserved quantities.
+- Low-stock alerts.
+
+Never deduct stock twice.
+
+---
+
+# 12. POS — POINT OF SALE
+
+Build a professional POS interface.
+
+### Product Selection
+
+- Search.
+- Category browsing.
+- Product cards.
+- SKU entry.
+- Barcode scanning.
+
+### Shopping Cart
+
+- Add products.
+- Remove products.
+- Increase/decrease quantity.
+- Select variants.
+- Apply discounts.
+- Add delivery charges.
+- Calculate totals automatically.
+
+### Customer
+
+- Existing customer selection.
+- New customer creation.
+- Guest checkout.
+
+### Payment Methods
+
+- Cash.
+- bKash.
+- Nagad.
+- Rocket.
+- Bank Transfer.
+- Card.
+- Partial Payment.
+- Cash on Delivery.
+- Due Payment.
+
+### Order Completion
+
+Generate a unique order ID.
+
+Save:
+- Customer.
+- Products.
+- Variants.
+- Quantities.
+- Prices.
+- Discounts.
+- Payments.
+- Due Amount.
+- Order Status.
+
+Update stock and financial records correctly.
+
+---
+
+# 13. BARCODE SCANNING
+
+Add a dedicated SCAN BARCODE button inside New Order / POS.
+
+Support:
+- EAN-13.
+- EAN-8.
+- UPC-A.
+- UPC-E.
+- Code 128.
+- Code 39.
+- ITF.
+- QR codes where supported.
+
+### Camera Scanning
+
+- Request camera permission.
+- Use rear camera on mobile.
+- Display scanning interface.
+- Detect barcodes.
+- Find matching product or variant.
+- Automatically add it to the cart.
+
+### Physical Scanner
+
+Support USB and Bluetooth keyboard-based barcode scanners.
+
+When the scanner sends a barcode followed by Enter, automatically find and add the product.
+
+Support barcode assignment when creating new products.
+
+Prevent duplicate barcodes.
+
+---
+
+# 14. 80MM THERMAL RECEIPT PRINTING
+
+Build an optimized thermal receipt system for my 80mm printer.
+
+Receipt contents:
+
+- XCLUFY Brand Name.
+- Order ID.
+- Date and Time.
+- Customer Name.
+- Phone.
+- Product.
+- Variant.
+- Quantity.
+- Unit Price.
+- Subtotal.
+- Discount.
+- Delivery Charge.
+- Grand Total.
+- Amount Paid.
+- Due Amount.
+- Payment Method.
+
+Footer:
+
+"Thank you for shopping with XCLUFY."
+
+"Keep shopping. Stay aesthetic."
+
+Features:
+
+- Print Receipt.
+- Preview Receipt.
+- Reprint.
+- Download PDF.
+- Customer Copy.
+
+Implement accurate 80mm print styles, automatic receipt height, correct content width, and thermal-friendly monochrome output.
+
+Support browser printing and compatible direct-print integrations where available.
+
+Never claim universal silent printing without a compatible printer bridge.
+
+---
+
+# 15. CUSTOMER MANAGEMENT
+
+Create a complete CRM.
+
+Fields:
+
+- Name.
+- Phone.
+- Email.
+- Address.
+- Division.
+- District.
+- Upazila / Thana.
+- Notes.
+
+Customer profile must show:
+
+- Orders.
+- Purchase History.
+- Payments.
+- Outstanding Due.
+- Pre-orders.
+- Waitlist Entries.
+
+Support search, edit, and new order creation.
+
+---
+
+# 16. PRE-ORDER MANAGEMENT
+
+Create pre-orders with:
+
+- Customer.
+- Product.
+- Variant.
+- Quantity.
+- Expected Arrival.
+- Advance Payment.
+- Remaining Payment.
+- Supplier.
+- Notes.
+
+Statuses:
+
+- Pending.
+- Advance Received.
+- Ordered.
+- In Transit.
+- Arrived.
+- Customer Notified.
+- Ready for Delivery.
+- Completed.
+- Cancelled.
+
+Support advance payments and automatic customer history updates.
+
+Pre-orders must not reduce physical stock before stock is actually received.
+
+---
+
+# 17. CUSTOMER WAITLIST
+
+Allow customers to be added to a waitlist when a product is unavailable.
+
+Fields:
+
+- Customer.
+- Phone.
+- Product.
+- Variant.
+- Quantity.
+- Priority.
+- Expected Availability.
+- Notes.
+
+Statuses:
+
+- Waiting.
+- Product Available.
+- Contacted.
+- Interested.
+- Converted to Pre-order.
+- Converted to Order.
+- Cancelled.
+
+When stock becomes available, automatically identify matching waitlist entries and notify authorized staff.
+
+---
+
+# 18. SUPPLIER MANAGEMENT
+
+Create supplier profiles.
+
+Fields:
+
+- Supplier Name.
+- Contact Person.
+- Phone.
+- Email.
+- Address.
+- Notes.
+
+Support:
+- Supplier purchases.
+- Purchase orders.
+- Payment tracking.
+- Outstanding supplier balance.
+- Purchase history.
+
+---
+
+# 19. FINANCIAL MANAGEMENT
+
+Create a complete financial system.
+
+### Income
+
+- Product Sales.
+- Customer Payments.
+- Pre-order Advances.
+- Due Collections.
+- Other Income.
+
+### Expenses
+
+- Product Purchasing.
+- Delivery.
+- Packaging.
+- Marketing.
+- Transportation.
+- Software.
+- Other Expenses.
+
+### Calculations
+
+Available Balance = Opening Balance + Actual Received Payments - Actual Expenses.
+
+Net Profit must be calculated using appropriate sales and cost accounting rules.
+
+Distinguish:
+- Revenue.
+- Actual Cash Received.
+- Outstanding Receivables.
+- Cost of Goods Sold.
+- Operating Expenses.
+- Gross Profit.
+- Net Profit.
+- Available Cash.
+- Business Equity.
+
+Do not double-count sales and payment collections.
+
+Do not treat shareholder investment as sales revenue.
+
+Do not treat shareholder loans as equity automatically.
+
+---
+
+# 20. REAL-TIME MOBILE PUSH NOTIFICATIONS
+
+This is another major requirement.
+
+Build a proper notification system so that users can receive business updates on their mobile phones.
+
+The website should also be installable as a Progressive Web App (PWA).
+
+### A. PWA Installation
+
+Implement:
+
+- Web App Manifest.
+- Service Worker.
+- App Icons.
+- Installable mobile experience.
+- Standalone display mode.
+- Responsive splash experience where supported.
+- Secure HTTPS deployment.
+
+Allow users to install XCLUFY on Android and supported desktop browsers.
+
+### B. Push Notification Permission
+
+After successful account approval and login:
+
+Display an optional notification setup prompt.
+
+Example:
+
+"Stay Updated with XCLUFY"
+
+"Enable notifications to receive important business updates instantly."
+
+Buttons:
+- Enable Notifications.
+- Maybe Later.
+
+Never request notification permission immediately on page load without user interaction.
+
+### C. Notification Events
+
+Send notifications for:
+
+**Account Events**
+- New registration.
+- Account approved.
+- Account rejected.
+- Account suspended.
+- Important security events.
+
+**Business Events**
+- New order.
+- Order confirmed.
+- Order cancelled.
+- New payment.
+- Due payment received.
+- New expense.
+- Low stock.
+- Out-of-stock product.
+- Pre-order arrival.
+- Waitlist product available.
+
+**Shareholder Events**
+- New shareholder added.
+- Ownership percentage changed.
+- New investment recorded.
+- Profit distribution approved.
+- Shareholder information updated.
+
+**Administrative Events**
+- User permission changed.
+- Important system update.
+- New activity requiring approval.
+
+### D. Notification Preferences
+
+Each user must be able to control which notification categories they receive.
+
+Allow:
+- Enable/disable categories.
+- In-app notifications.
+- Push notifications.
+- Mark as read.
+- Notification history.
+
+### E. Technical Implementation
+
+Use:
+- PWA.
+- Service Worker.
+- Web Push API.
+- VAPID authentication.
+- Secure server-side notification delivery.
+- Persistent push subscriptions.
+- Notification database records.
+
+Use a supported backend or server-side notification service to deliver notifications.
+
+Handle subscription expiration and device changes.
+
+Allow multiple devices per user.
+
+If push notifications are unavailable on a particular browser or device, retain in-app notifications and explain the limitation.
+
+Do not show fake notifications or claim delivery when the push provider reports failure.
+
+---
+
+# 21. REPORTS & ANALYTICS
+
+Build a reporting center.
+
+Reports:
+
+- Daily Sales.
+- Weekly Sales.
+- Monthly Sales.
+- Yearly Sales.
+- Profit & Loss.
+- Expenses.
+- Inventory.
+- Best-Selling Products.
+- Customer Purchases.
+- Pre-orders.
+- Waitlists.
+- Outstanding Dues.
+- Shareholder Investments.
+- Ownership Distribution.
+- Profit Distribution.
+- Cash Flow.
+
+Support CSV and PDF export.
+
+Restrict sensitive reports by role.
+
+---
+
+# 22. USER MANAGEMENT & ROLE PERMISSIONS
+
+Create the Main Admin user management panel.
+
+Suggested roles:
+
+- Super Admin.
+- Admin.
+- Manager.
+- Sales Staff.
+- Inventory Manager.
+- Accountant.
+- Shareholder Viewer.
+
+Main Admin controls:
+
+- Approve users.
+- Reject users.
+- Suspend users.
+- Assign roles.
+- Set permissions.
+- Revoke sessions.
+- Manage access.
+
+Use granular server-side permissions.
+
+A shareholder record must not automatically grant application access.
+
+---
+
+# 23. ACTIVITY LOGS & SECURITY
+
+Record all important actions.
+
+- User registration.
+- Approval.
+- Product creation.
+- Product editing.
+- Stock adjustments.
+- Order creation.
+- Payment collection.
+- Expense creation.
+- Shareholder creation.
+- Ownership changes.
+- Investment records.
+- Profit distributions.
+- Biometric enrollment.
+- Passkey revocation.
+- User permission changes.
+
+Each log must include:
+
+- User ID.
+- Action.
+- Affected record.
+- Date and time.
+- Previous values.
+- New values.
+
+Audit logs must be immutable to ordinary users.
+
+Protect sensitive business data with server-side authorization.
+
+---
+
+# 24. SETTINGS & SYSTEM CONFIGURATION
+
+Build a complete settings center.
+
+### Business Settings
+
+- Business Name.
+- Logo.
+- Business Address.
+- Phone.
+- Email.
+- Currency.
+- Opening Balance.
+- Receipt Settings.
+- Delivery Charges.
+- Inventory Settings.
+
+### Security Settings
+
+- Password Management.
+- Passkey Management.
+- Active Sessions.
+- Device Management.
+- Login Security.
+
+### Notification Settings
+
+- Push Notifications.
+- In-App Notifications.
+- Notification Preferences.
+
+### Appearance
+
+- Default Dark Theme.
+- Light Theme (optional).
+- Sidebar Preferences.
+- Animation Preferences.
+
+---
+
+# 25. DATABASE & BACKEND ARCHITECTURE
+
+Use a persistent relational database and secure backend.
+
+For this Lovable project, use Supabase with:
+
+- PostgreSQL.
+- Supabase Authentication.
+- Row Level Security.
+- Supabase Storage.
+- Realtime subscriptions.
+- Secure database functions / RPC.
+- Server-side Edge Functions where needed.
+
+Do not expose service-role credentials in frontend code.
+
+Do not use localStorage as the primary database.
+
+### Required Database Tables
+
+**Authentication & Users**
+- profiles
+- user_roles
+- user_permissions
+- user_approval_requests
+- user_sessions
+
+**Biometric**
+- webauthn_credentials
+- webauthn_challenges
+
+**Business**
+- business_settings
+- business_members
+
+**Products**
+- products
+- categories
+- product_variants
+- barcodes
+- inventory_transactions
+
+**Sales**
+- customers
+- orders
+- order_items
+- payments
+
+**Pre-orders**
+- preorders
+- preorder_items
+- waitlist_entries
+
+**Shareholders**
+- shareholders
+- shareholder_investments
+- ownership_allocations
+- ownership_history
+- profit_distributions
+- profit_distribution_items
+
+**Finance**
+- transactions
+- expenses
+- income_records
+- financial_ledger
+- supplier_payments
+
+**Suppliers**
+- suppliers
+- purchase_orders
+- purchase_order_items
+
+**Notifications**
+- notifications
+- push_subscriptions
+- notification_preferences
+
+**Security**
+- audit_logs
+- security_events
+
+Use appropriate:
+- Foreign keys.
+- Unique constraints.
+- Database indexes.
+- Validation rules.
+- Atomic transactions.
+- RLS policies.
+
+Implement the first-admin bootstrap using secure atomic server-side logic.
+
+Implement secure financial transaction processing.
+
+Implement ownership calculations using reliable decimal arithmetic rather than floating-point approximations.
+
+Never trust client-side permissions.
+
+---
+
+# 26. PERFORMANCE & RESPONSIVENESS
+
+Optimize the entire platform.
+
+Requirements:
+
+- Fast page loading.
+- Optimized images.
+- Efficient database queries.
+- Server-side pagination.
+- Search optimization.
+- Lazy loading.
+- Responsive charts.
+- Reusable components.
+- Reliable form validation.
+- Proper error boundaries.
+- Loading skeletons.
+- Graceful error handling.
+
+Every screen must be professionally designed for touch and mouse interaction.
+
+The POS must be especially optimized for quick mobile and desktop operation.
+
+---
+
+# 27. COMPLETE QUALITY ASSURANCE & TESTING
+
+Before declaring the application complete, test all major workflows.
+
+### Authentication Tests
+1. Register first user.
+2. Verify Main Admin creation.
+3. Register second user.
+4. Verify Pending Approval.
+5. Approve the second user.
+6. Verify login.
+7. Set up Passkey.
+8. Log in using Passkey.
+9. Revoke a Passkey.
+10. Test password fallback.
+
+### Shareholder Tests
+1. Verify initial Main Admin ownership is 100%.
+2. Verify zero initial shareholders.
+3. Add a shareholder.
+4. Record investment.
+5. Verify ownership percentage.
+6. Add another shareholder.
+7. Verify total ownership is 100%.
+8. Test ownership transfer.
+9. Verify ownership history.
+10. Calculate profit distribution.
+11. Verify permission restrictions.
+
+### Product & POS Tests
+1. Create categories.
+2. Create products.
+3. Add variants.
+4. Add barcodes.
+5. Import CSV.
+6. Detect duplicates.
+7. Scan barcode.
+8. Create customer.
+9. Complete POS order.
+10. Verify stock deduction.
+11. Print 80mm receipt.
+
+### Finance Tests
+1. Add income.
+2. Add expense.
+3. Record partial payment.
+4. Record due collection.
+5. Verify balance.
+6. Verify net profit.
+7. Verify shareholder investments do not count as sales.
+8. Verify no duplicate transactions.
+
+### Notification Tests
+1. Enable notifications.
+2. Test new order notification.
+3. Test payment notification.
+4. Test low-stock notification.
+5. Test shareholder update notification.
+6. Test mobile push delivery.
+7. Test multiple devices.
+8. Test expired subscriptions.
+
+### Responsive Tests
+
+Test all modules on:
+- Mobile.
+- Tablet.
+- Laptop.
+- Desktop.
+
+Fix every major layout issue, console error, failed database operation, and permission issue.
+
+---
+
+# 28. DEVELOPMENT EXECUTION PLAN
+
+Build the application in the following order.
+
+**PHASE 1 — Foundation**
+- Project initialization.
+- Brand design system.
+- Database architecture.
+- Authentication.
+- First Main Admin bootstrap.
+- User approval system.
+- Role permissions.
+
+**PHASE 2 — Core Business**
+- Dashboard.
+- Products.
+- Categories.
+- CSV Import.
+- Inventory.
+- Barcode Management.
+
+**PHASE 3 — Sales**
+- POS.
+- Customers.
+- Orders.
+- Payment Management.
+- Receipt Printing.
+
+**PHASE 4 — Customer Operations**
+- Pre-orders.
+- Waitlist.
+- Suppliers.
+
+**PHASE 5 — Finance**
+- Income.
+- Expenses.
+- Financial Ledger.
+- Reports.
+- Analytics.
+
+**PHASE 6 — Ownership**
+- Shareholder Management.
+- Investment Tracking.
+- Ownership Calculations.
+- Ownership History.
+- Profit Distribution.
+
+**PHASE 7 — Security & Mobile Experience**
+- Profile Pictures.
+- WebAuthn / Passkeys.
+- Biometric Enrollment.
+- Biometric Login.
+- PWA.
+- Push Notifications.
+
+**PHASE 8 — Final Quality**
+- Complete integration.
+- Responsive optimization.
+- Testing.
+- Error correction.
+- Security verification.
+- Production deployment preparation.
+
+---
+
+# 29. ABSOLUTE NON-NEGOTIABLE REQUIREMENTS
+
+1. This is a completely new project.
+2. Do not assume an existing website or database.
+3. Build the entire application from scratch.
+4. Do not create fake production data.
+5. Do not leave placeholder pages.
+6. Do not leave non-functional buttons.
+7. Do not use localStorage as a production database.
+8. Do not expose sensitive credentials.
+9. Do not allow unauthorized financial access.
+10. Do not create any shareholder by default.
+11. Main Admin must initially own 100%.
+12. Main Admin must control shareholder creation and ownership changes.
+13. Total active ownership must always equal 100%.
+14. Do not silently change ownership percentages.
+15. Do not confuse investment with business revenue.
+16. Fingerprint authentication must use real WebAuthn/Passkeys.
+17. Never store raw fingerprint data.
+18. Biometric enrollment must only be available after account approval.
+19. Push notifications must use real supported delivery mechanisms.
+20. Do not claim a notification was delivered without successful provider confirmation.
+21. All business modules must use the same persistent database.
+22. All financial calculations must be accurate.
+23. All important actions must be logged.
+24. The entire application must be responsive.
+25. The POS and thermal printing workflow must be production-oriented.
+26. Do not claim completion until the actual workflows have been tested.
+
+If any feature requires an additional provider, API, HTTPS configuration, browser permission, or device capability, implement the supported integration and clearly identify the remaining setup requirement. Never replace a real feature with a visual simulation.
+
+---
+
+# FINAL PROJECT VISION
+
+Create XCLUFY as a complete premium fashion-business ERP platform.
+
+It should allow the Main Admin to manage the entire business from one place:
+
+- Monitor business finances.
+- Manage products and inventory.
+- Generate customer orders.
+- Operate a complete POS.
+- Scan barcodes.
+- Print thermal receipts.
+- Manage customers.
+- Handle pre-orders.
+- Maintain customer waitlists.
+- Manage suppliers.
+- Add and manage shareholders.
+- Track business investments.
+- Calculate ownership percentages.
+- Manage profit distributions.
+- Approve staff accounts.
+- Configure biometric authentication.
+- Receive real-time mobile notifications.
+- Monitor every important business activity.
+
+The final interface should look like a premium enterprise SaaS product, with the reliability of a commercial ERP system.
+
+**PROJECT NAME: XCLUFY BUSINESS MANAGEMENT SYSTEM**
+
+**BRAND: XCLUFY**
+
+**TAGLINE: Manage Smarter. Sell Better. Stay Aesthetic.**
+
+**FINAL INSTRUCTION: Build a complete working application, not merely a beautiful dashboard. Every module must be interconnected, secure, tested, responsive, and ready for real business operations.**

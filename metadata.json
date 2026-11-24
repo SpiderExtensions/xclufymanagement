@@ -1,0 +1,6 @@
+{
+  "name": "XCLUFY Business Management System",
+  "description": "Enterprise business management, financial ERP, POS, inventory, shareholder equity, biometric WebAuthn, and real-time notification platform for XCLUFY fashion accessories.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
